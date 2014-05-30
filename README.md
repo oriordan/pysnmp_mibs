@@ -1,7 +1,7 @@
 pysnmp_mibs
 ===========
 
-A collection of IETF &amp; IANA &amp; Cisco &amp; Juniper &amp; Arista &amp; Aruba &amp; Perle MIBs pre-compiled for PySNMP
+A collection of IETF &amp; IANA &amp; Cisco &amp; Juniper &amp; Netscreen &amp; Arista &amp; Aruba &amp; Perle MIBs pre-compiled for PySNMP
 
 [pysnmp](http://pysnmp.sf.net) and [pyasn1](http://pyasn1.sf.net) are great libraries for working with SNMP in Python.
 Ilya Etingof (the author of the above projects) made a pypi package called [pysnmp-mibs](https://pypi.python.org/pypi/pysnmp-mibs/),
@@ -11,6 +11,7 @@ The process is not always straightforward, and this repo supposed to help you ge
 ##Vendor resources:
  * Cisco: http://tools.cisco.com/Support/SNMP/do/BrowseMIB.do?local=en&step=2
  * Juniper: http://www.juniper.net/techpubs/software/index_mibs.html
+ * Netscreen: http://www.juniper.net/techpubs/software/screenos/mibs.html
  * Arista: http://www.arista.com/en/support/arista-snmp-mibs
  * Aruba: http://support.arubanetworks.com/
  * Perle: http://www.perle.com/downloads/software/IOLAN/
