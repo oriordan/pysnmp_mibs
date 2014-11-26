@@ -1,7 +1,7 @@
 pysnmp_mibs
 ===========
 
-A collection of IETF &amp; IANA &amp; Cisco &amp; Juniper &amp; Netscreen &amp; Arista &amp; Aruba &amp; Perle MIBs pre-compiled for PySNMP
+A collection of IETF &amp; IANA &amp; network vendor specific MIBs pre-compiled for PySNMP
 
 [pysnmp](http://pysnmp.sf.net) and [pyasn1](http://pyasn1.sf.net) are great libraries for working with SNMP in Python.
 Ilya Etingof (the author of the above projects) made a pypi package called [pysnmp-mibs](https://pypi.python.org/pypi/pysnmp-mibs/),
@@ -13,8 +13,9 @@ The process is not always straightforward, and this repo supposed to help you ge
  * Juniper: http://www.juniper.net/techpubs/software/index_mibs.html
  * Netscreen: http://www.juniper.net/techpubs/software/screenos/mibs.html
  * Arista: http://www.arista.com/en/support/arista-snmp-mibs
- * Aruba: http://support.arubanetworks.com/
- * Perle: http://www.perle.com/downloads/software/IOLAN/
+ * Aruba: http://support.arubanetworks.com (support account required)
+ * Perle: http://www.perle.com/downloads/software/IOLAN
+ * F5: https://support.f5.com/kb/en-us/solutions/public/0000/500/sol503.html (an actual F5 required)
 
 ##Usage:
 
@@ -31,3 +32,12 @@ The process is not always straightforward, and this repo supposed to help you ge
 ('iso', 'org', 'dod', 'internet', 'mgmt', 'mib-2', 'system', 'sysDescr')
 >>>
 ```
+
+##Hints:
+
+Sometimes network devices are not sending the traps according to their own MIB specification.
+In order to minimize OID resolution issues, some compiled mibs are altered:
+ * IF-MIB.py: Allowing zero interface index (because Cisco voice gateways are "special")
+ * BGP4-V2-MIB-JUNIPER.py: Using InetAddressIPv6 for jnxBgpM2PeerLocalAddr and jnxBgpM2PeerRemoteAddr
+ * CISCO-BGP4-MIB.py: Dropping cbgpPeer2Type from cbgpPeer2Entry
+ * CISCO-DIAL-CONTROL-MIB.py: Using Integer for cCallHistoryConnectTime and cCallHistoryDisconnectTime
